@@ -6,7 +6,7 @@
 class openstack::all(
   # passing in the public ipaddress is required
   $public_address,
-  $public_interface,
+  $public_interface     = undef,
   $private_interface,
   $floating_range       = false,
   $fixed_range          = '10.0.0.0/24',
@@ -17,8 +17,8 @@ class openstack::all(
   $rabbit_password      = 'rabbit_pw',
   $rabbit_user          = 'nova',
   # opestack credentials
-  $admin_email          = 'someuser@some_fake_email_address.foo',
-  $admin_user_password  = 'ChangeMe',
+  $admin_email          = 'root@localhost',
+  $admin_user_password,
   $keystone_db_password = 'keystone_pass',
   $keystone_admin_token = 'keystone_admin_token',
   $nova_db_password     = 'nova_pass',
